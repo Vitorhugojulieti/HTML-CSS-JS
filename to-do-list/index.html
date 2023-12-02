@@ -11,13 +11,13 @@
 <body>
     <main class="container display-flex flex-center-x">
         <div class="to-do-content border-radius-15 display-flex flex-col flex-center-y" style="gap: 2rem;">
+            <span class="message"></span>
             <form class="margin-bt-20" id="formTask">
                 <legend class="text-bold text-2rem margin-bt-20">Todo App</legend>
                 <div class="field-task display-flex">
                     <input type="text" id="fieldTask">
-                    <button id="btnNewTask"><i class="fa-solid fa-plus "></i></button>
+                    <button id="btnNewTask" onclick="createTask()"><i class="fa-solid fa-plus "></i></button>
                 </div>
-                <span class="message"></span>
             </form>
 
             <div class="tasks-content display-flex flex-col flex-center-y " style="gap: 1rem;">

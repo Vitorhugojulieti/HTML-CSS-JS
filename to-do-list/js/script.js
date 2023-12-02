@@ -1,16 +1,31 @@
 //componentes para criar task
-btnNewTask = document.querySelector('#btnNewTask');
-formTask = document.querySelector('#formTask');
-inputTask = document.querySelector('#fieldTask');
+const btnNewTask = document.querySelector('#btnNewTask');
+const formTask = document.querySelector('#formTask');
+const inputTask = document.querySelector('#fieldTask');
 //container tasks
-containerTasks = document.querySelector('.tasks-content');
+const containerTasks = document.querySelector('.tasks-content');
 //btn exclui todas
-btnClearAll = document.querySelector('#btnClear');
+const btnClearAll = document.querySelector('#btnClear');
 //msg erro componente
-spanMessage = document.querySelector('.message');
+const spanMessage = document.querySelector('.message');
 //total tasks componente
-spanTotal = document.querySelector('#totalTasks');
+const spanTotal = document.querySelector('#totalTasks');
 
+//funcao para setar mensagem
+function setMessage(msg = null, color){
+    if(msg === null){
+        spanMessage.innerText = '';
+    }else{
+        spanMessage.innerText = msg;
+        if(color == 1){
+            spanMessage.classList.remove('red');
+            spanMessage.classList.add('green');
+        }else{
+            spanMessage.classList.remove('green');
+            spanMessage.classList.add('red');
+        }
+    }
+}
 
 //evitando envio de formulario
 formTask.addEventListener("submit", (e)=>{
@@ -18,13 +33,19 @@ formTask.addEventListener("submit", (e)=>{
 })
 
 //recebendo dados do input e criando nova task
-btnNewTask.addEventListener("click",()=>{
-    let valueInput = inputTask.value;
+function createTask(value = null){
+
+    let valueInput;
+
+    if(value === null){
+        valueInput = inputTask.value;
+    }else{
+        valueInput = value;
+    }
 
     //validando se não está vazio ou null
     if(valueInput == '' || valueInput == null){
-        spanMessage.classList.remove('green');
-        spanMessage.innerText = "Campo vazio!";
+        setMessage('Campo vazio!',2);
     }else{
         let task = document.createElement('div');
         task.setAttribute("onClick", "checkTask(this)");
@@ -35,12 +56,12 @@ btnNewTask.addEventListener("click",()=>{
         <button onclick="removeTask(${idGenerate()})"><i class="fa-solid fa-trash-can text-black"></i></button>`;
 
         containerTasks.appendChild(task);
-        spanMessage.classList.add('green');
-        spanMessage.innerText = "Tarefa adicionada!";
-        inputTask.value = '';
+        inputTask.value='';
+        setMessage('Tarefa adicionada!',1);
         countTask();
+        saveTasks();
     }
-})
+}
 
 //funcao para dar check na task
 function checkTask(task){
@@ -52,13 +73,13 @@ function checkTask(task){
         i.classList.add('fa-square');
         i.classList.remove('fa-square-check');
         countTask();
-        spanMessage.innerText = "";
+        setMessage();
     }else{
         task.classList.add('complete');
         i.classList.remove('fa-square');
         i.classList.add('fa-square-check');
         countTask();
-        spanMessage.innerText = "";
+        setMessage();
     }
 }
 
@@ -87,6 +108,8 @@ function removeTask(id){
     });
 
     countTask();
+    saveTasks();
+    setMessage('Tarefa removida!',1);
 }
 
 function removeAll(){
@@ -100,3 +123,25 @@ function removeAll(){
 function countTask(){
     spanTotal.innerText = (document.querySelectorAll('.task').length - document.querySelectorAll('.complete').length);
 }
+
+//trabalhando com localStorage
+
+//funcao para salvar em localStorage
+function saveTasks(){
+    let tasks = document.querySelectorAll('.task');
+    let tasksContent = [];
+
+    tasks.forEach(task =>{
+        tasksContent.push(task.innerText);
+    });
+    localStorage.setItem('tasks', JSON.stringify(tasksContent));
+}
+
+//funcao para buscar tasks no localStorage
+function getTasks(){
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    tasks.forEach(task =>{
+        createTask(task);
+    })
+}
+getTasks();

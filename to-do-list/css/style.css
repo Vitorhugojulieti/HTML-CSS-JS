@@ -85,12 +85,17 @@
 
 /* configuracoes gerais */
 .message{
-    background-color: #fa5e5e;
+    width:100%;
+    padding: .5rem;
+    background-color: #fff;
     color: #ffff;
     font: bold;
 }
 .message.green{
-    background-color: green;
+    background-color: rgb(77, 204, 77);
+}
+.message.red{
+    background-color: #f77575;
 }
 
 .to-do-content{
@@ -141,6 +146,7 @@ i{
     width: 80%;
     padding: 1rem;
     border: 1px solid #000;
+    background-color: #e9e9e9;
 }
 .task>button{
     background-color: transparent;

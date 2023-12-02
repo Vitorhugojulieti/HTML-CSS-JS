@@ -1,1 +1,2 @@
-projeto todo list
+# projeto todo list
+Projeto desenvolvido para por em pratica conceitos de html, css e javascript, como manipulação da DOM(Document Object Model), e também o uso do localStorage para persistir dados das tarefas incluidas pelo usuario. 
