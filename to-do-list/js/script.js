@@ -13,6 +13,8 @@ const spanTotal = document.querySelector('#totalTasks');
 
 //funcao para setar mensagem
 function setMessage(msg = null, color){
+    console.log('passoi');
+
     if(msg === null){
         spanMessage.innerText = '';
     }else{
@@ -73,13 +75,13 @@ function checkTask(task){
         i.classList.add('fa-square');
         i.classList.remove('fa-square-check');
         countTask();
-        setMessage();
+        // setMessage();
     }else{
         task.classList.add('complete');
         i.classList.remove('fa-square');
         i.classList.add('fa-square-check');
         countTask();
-        setMessage();
+        // setMessage();
     }
 }
 
@@ -107,9 +109,9 @@ function removeTask(id){
         }
     });
 
+    setMessage('Tarefa removida!',1);
     countTask();
     saveTasks();
-    setMessage('Tarefa removida!',1);
 }
 
 function removeAll(){
@@ -145,3 +147,4 @@ function getTasks(){
     })
 }
 getTasks();
+setMessage();

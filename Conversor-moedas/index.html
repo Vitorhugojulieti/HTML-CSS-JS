@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-ber">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7be0780cc4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../Conversor-moedas/css/style.css">
+    <script src="../Conversor-moedas/js/script.js" defer></script>
+    <title>Conversor de moedas</title>
+</head>
+<body>
+    <form class="formConversor container display-flex flex-col flex-center-y ">
+        <fieldset class="display-flex flex-col flex-center-x flex-center-y border-radius-15" style="gap: .5rem;">
+            <legend class="text-bold text-32">Conversor de moedas</legend>
+
+            <div class="field display-flex flex-col">
+                <label for="">Moeda origem</label>
+                <select name="moedaOrigin" id="moedaOrigin">
+                    <option value="real">Real brasileiro (BRL)</option>
+                    <option value="usd">Dólar Americano (USD)</option>
+                    <option value="eur">Euro (EUR)</option>
+                    <option value="jpy">Iene Japonês (JPY)</option>
+                    <option value="cny">Yuan Chinês (CNY)</option>
+                </select>
+            </div>
+
+            <div class="field display-flex flex-col">
+                <label for="">Moeda destino</label>
+                <select name="moedaDestino" id="moedaDestino">
+                    <option value="real">Real brasileiro (BRL)</option>
+                    <option value="usd">Dólar Americano (USD)</option>
+                    <option value="eur">Euro (EUR)</option>
+                    <option value="jpy">Iene Japonês (JPY)</option>
+                    <option value="cny">Yuan Chinês (CNY)</option>
+                </select>
+            </div>
+
+            <div class="field display-flex flex-col">
+                <label for="">Quantidade</label>
+                <input type="text" id="inputQuantidade">
+            </div>
+
+            <button id="btnConverter" class="text-bold text-14">Converter</button>
+        </fieldset>
+
+        <div class="content-result">
+            <h2></h2>
+        </div>
+    </form>
+</body>
+</html>
