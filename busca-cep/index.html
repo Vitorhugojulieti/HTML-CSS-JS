@@ -9,22 +9,16 @@
     <title>Busca cep</title>
 </head>
 <body>
-    <div class="container">
-        <form>
-            <legend>Busca cep</legend>
-            <div class="field-container">
-                <label for="">Cep</label>
-                <input type="text">
-                <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="container display-flex flex-col flex-center-y">
+        <form id="formBuscaCep" class="container border-radius-15 display-flex flex-col flex-center-y">
+            <legend class="text-bold text-32">Busca cep</legend>
+            <div class="field display-flex  flex-center-y flex-center-x">
+                <input type="text" id="cep">
+                <button id="btnConsulta" class="text-bold text-24 "><i class="fa-solid fa-magnifying-glass "></i></button>
             </div>
         </form>
         <div class="content-data">
-            <div class="container">
-                <h2 class="cidade"></h2>
-                <h2 class="Bairro"></h2>
-                <h2 class="Rua"></h2>
-                <h2 class="Estado"></h2>
-            </div>
+            <h2 class="Result"></h2>
         </div>
     </div>
 </body>

@@ -1,0 +1,128 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,500&display=swap');
+* {
+    list-style: none;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.text-black {color: var(--color-black);}
+.text-white {color: var(--color-white);}
+
+/* setando tamanhos de texto */
+.text-12 {font-size: 12px;}
+.text-14 {font-size: 14px;}
+.text-16 {font-size: 16px;}
+.text-20 {font-size: 20px;}
+.text-24 {font-size: 24px;}
+.text-32 {font-size: 32px;}
+.text-48 {font-size: 48px;}
+.text-64 {font-size: 64px;}
+.text-80 {font-size: 80px;}
+.text-1rem{font-size: 1rem;}
+.text-1-5rem{font-size: 1.5rem;}
+.text-2rem{font-size: 2rem;}
+
+/* SETANDO PESO DA FONTE E ESTILO */
+.text-normal{font-weight: normal;}
+.text-medium{font-weight: 500;}
+.text-bold{font-weight: bold;}
+.text-italic{font-style: italic;}
+
+/* SETANDO ESPAÇAMENTO COM MARGIN BOTTOM */
+.margin-bt-4{margin-bottom:4px;}
+.margin-bt-8{margin-bottom:8px;}
+.margin-bt-12{margin-bottom:12px;}
+.margin-bt-16{margin-bottom:16px;}
+.margin-bt-20{margin-bottom:20px;}
+.margin-bt-24{margin-bottom:24px;}
+.margin-bt-32{margin-bottom:32px;}
+.margin-bt-40{margin-bottom:40px;}
+.margin-bt-48{margin-bottom:48px;}
+.margin-bt-60{margin-bottom:60px;}
+.margin-bt-72{margin-bottom:72px;}
+.margin-bt-80{margin-bottom:80px;}
+.margin-bt-120{margin-bottom:120px;}
+.margin-bt-160{margin-bottom:160px;}
+.margin-bt-200{margin-bottom:200px;}
+
+/* SETANDO BORDER RADIUS PARA TODOS OS CANTOS */
+.border-radius-5 {border-radius: 5px;}
+.border-radius-10 {border-radius: 10px;}
+.border-radius-15 {border-radius: 15px;}
+.border-radius-20 {border-radius: 20px;}
+.border-radius-25 {border-radius: 25px;}
+.border-radius-30 {border-radius: 30px;}
+
+/* SETANDO COMPORTAMENTO DO BOX MODEL*/
+.display-block {display: block;}
+.display-inline-block {display: inline-block;}
+.display-none {display: none;}
+.display-flex {display:flex;}
+.display-grid {display:grid;}
+
+/* SETANDO CONFIGURAÇÕES DO FLEX */
+.flex-row-reverse {flex-direction: row-reverse;}
+.flex-col {flex-direction: column;}
+.flex-col-reverse {flex-direction: column-reverse;}
+.flex-center-y{align-items: center;}
+.flex-center-x{justify-content: center;}
+.flex-between-x {justify-content: space-between;}
+.flex-around-x {justify-content: space-around;}
+.flex-evenly-x {justify-content: space-evenly;}
+.flex-wrap{flex-wrap: wrap;}
+
+/* SETANDO PADRÃO DE TAMANHO DO CONTAINER */
+.container{
+    max-width:1400px;
+    margin: auto;
+    padding:10px;
+}
+input{
+    border: 1px solid #000;
+    font-size: 1rem;
+    padding: .75rem;
+    border-bottom-left-radius: .4rem;
+    border-top-left-radius: .4rem;
+    outline: none;
+}
+
+.field{
+    padding:1rem;
+    width: 100%;
+}
+
+
+form{
+    width: 50%;
+    height: 50%;
+    border: 2px solid #000;
+}
+
+button{
+    background-color: rgb(255, 3, 3);
+    border-top-right-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    padding: .5rem;
+    cursor: pointer;
+    transition: .4s;
+}
+button:hover{
+    scale: 1.1;
+}
+
+button >i{
+    color: #fff;
+}
+
+.content-data{
+    margin-top: 1rem;
+}
